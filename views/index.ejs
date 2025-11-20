@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Todo App</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <!-- Your Name -->
+    <h2 style="text-align:center; margin-top:10px; opacity:0.8;">
+        Abhishek Kumar — 2023246738
+    </h2>
+
+    <h1>Todo List</h1>
+
+    <form action="/add" method="POST">
+        <input type="text" name="todo" placeholder="Enter todo..." required />
+        <button>Add</button>
+    </form>
+
+    <ul>
+        <% todos.forEach((item, index) => { %>
+            <li>
+                <%= item %>
+                <form action="/delete" method="POST" style="display:inline;">
+                    <input type="hidden" name="index" value="<%= index %>" />
+                    <button>Delete</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+
+</body>
+</html>
